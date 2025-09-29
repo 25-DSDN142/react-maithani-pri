@@ -1,7 +1,8 @@
 // ----=  HANDS  =----
 /* load images here */
+let bgImage; // global:background image for the magic light stage.
 function prepareInteraction() {
-  //bgImage = loadImage('/images/background.png');
+  //bgImage = loadImage('/images/nightSky.png'); // load once at start
 }
 
 function drawInteraction(faces, hands) {
