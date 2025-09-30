@@ -1,11 +1,9 @@
 // ----=  HANDS  =----
-/* load images here */
-let bgImage; // global:background image for the magic light stage.
 function prepareInteraction() {
-  //bgImage = loadImage('/images/nightSky.png'); // load once at start
+  bgImage = loadImage('/images/nightSky.png'); // load once at start
 }
-
 function drawInteraction(faces, hands) {
+   image(bgImage, 0, 0, width, height); 
   // hands part
   // for loop to capture if there is more than one hand on the screen. This applies the same process to all hands.
   for (let i = 0; i < hands.length; i++) {
