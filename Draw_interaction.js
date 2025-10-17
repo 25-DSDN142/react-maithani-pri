@@ -3,9 +3,23 @@ function prepareInteraction() {
   //bgImage = loadImage('/images/background.png');
 }
 
-function drawInteraction(faces, hands) {
 
-  // hands part
+function drawInteraction(faces, hands) {
+  // Draw background first
+  image(bgImage, 0, 0, width, height);
+  
+  // Step 5: Draw fading trail
+  for (let i = 0; i < trail.length; i++) {
+    let t = trail[i];
+    let alpha = map(i, 0, trail.length, 0, 100); // fade older points
+    
+    noStroke();
+    fill(255, 255, 200, alpha);
+    ellipse(t.x, t.y, 60, 60);
+    fill(255, 255, 255, alpha);
+    ellipse(t.x, t.y, 30, 30);
+  }
+   // hands part
   // USING THE GESTURE DETECTORS (check their values in the debug menu)
   // detectHandGesture(hand) returns "Pinch", "Peace", "Thumbs Up", "Pointing", "Open Palm", or "Fist"
 
